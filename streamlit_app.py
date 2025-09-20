@@ -150,8 +150,8 @@ st.markdown(
 
     """
 )
-st.markdown("---")
 
 
 st.divider()
 st.caption("Built with ❤️ using Streamlit + tabula-py. -> dehan.m.vithana@gmail.com")
+
