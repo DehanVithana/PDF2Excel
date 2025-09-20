@@ -3,6 +3,8 @@ import tabula
 import pandas as pd
 import io
 import zipfile
+import subprocess
+import os
 
 # Set up the page configuration
 st.set_page_config(
@@ -19,6 +21,14 @@ def convert_pdf_to_excel(pdf_file, excel_buffer):
     Each detected table is written to a new sheet.
     """
     try:
+        # Check if the 'java' command is available
+        try:
+            subprocess.run(["java", "-version"], check=True, capture_output=True)
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            st.error("It looks like the 'java' command is not found. Please ensure Java is installed and configured correctly.")
+            st.info("On Streamlit Cloud, you need to create a `packages.txt` file with `openjdk-11-jdk` inside it to install Java.")
+            return
+
         # Read all tables from the PDF.
         # This will return a list of pandas DataFrames.
         tables = tabula.read_pdf(
