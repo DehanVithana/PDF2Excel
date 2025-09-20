@@ -74,7 +74,7 @@ def convert_pdf_to_excel(pdf_file, excel_buffer):
 # --- UI Layout ---
 
 st.title("📄 PDF to Excel Converter")
-st.write("Upload one or more PDF files, and I will convert them into Excel spreadsheets.")
+st.write("Upload one or more PDF files, and the tool will convert them into Excel spreadsheets.")
 st.write("The app will automatically detect tables in your PDFs, even from unstructured documents, and export them. If you upload multiple files, they will be combined into a single ZIP file for download.")
 
 # File uploader widget, allows multiple files
@@ -145,10 +145,13 @@ st.markdown("---")
 st.markdown(
     """
     ### About the App
-    This application uses `tabula-py` and `pandas` to extract tabular data from your PDFs.
+    This application uses simple AI functions to extract tabular data from your PDFs.
     It works best on documents with clear table structures but can also make a good guess on less structured data.
-    
-    You can deploy this application on Streamlit's Community Cloud by simply pushing this script to a GitHub repository.
+
     """
 )
 st.markdown("---")
+
+
+st.divider()
+st.caption("Built with ❤️ using Streamlit + tabula-py. -> dehan.m.vithana@gmail.com")
