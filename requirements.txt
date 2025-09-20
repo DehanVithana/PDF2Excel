@@ -1,3 +1,4 @@
 streamlit
 tabula-py
 pandas
+xlsxwriter
